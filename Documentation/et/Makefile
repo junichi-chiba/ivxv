@@ -39,7 +39,7 @@ html: $(HTMLDOCS)
 $(HTMLDOCS): html-%:
 	$(MAKE) -C $* html
 	mkdir -p $(DESTDIR)/html/$*
-	cp -ru $*/_build/html/** $(DESTDIR)/html/$*
+	cp -r $*/_build/html/** $(DESTDIR)/html/$*
 
 .PHONY: pdf
 pdf: $(PDFDOCS)
@@ -48,7 +48,7 @@ pdf: $(PDFDOCS)
 $(PDFDOCS): pdf-%:
 	$(MAKE) -C $* latexpdf
 	mkdir -p $(DESTDIR)/pdf
-	cp -ru $*/_build/latex/*.pdf $(DESTDIR)/pdf/
+	cp -r $*/_build/latex/*.pdf $(DESTDIR)/pdf/
 
 .PHONY: clean
 clean: $(CLEANDOCS)

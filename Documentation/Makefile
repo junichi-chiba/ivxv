@@ -40,19 +40,19 @@ pdf: $(PDFDOCS1) $(PDFDOCS2) $(PDFDOCS3)
 $(PDFDOCS1): pdf1-%:
 	$(MAKE) -C $* latexpdf
 	mkdir -p $(DESTDIR1)
-	cp -ru $*/_build/latex/*.pdf $(DESTDIR1)
+	cp -r $*/_build/latex/*.pdf $(DESTDIR1)
 
 .PHONY: $(PDFDOCS2)
 $(PDFDOCS2): pdf2-%:
 	$(MAKE) -C $* latexpdf
 	mkdir -p $(DESTDIR2)
-	cp -ru $*/_build/latex/*.pdf $(DESTDIR2)
+	cp -r $*/_build/latex/*.pdf $(DESTDIR2)
 
 .PHONY: $(PDFDOCS3)
 $(PDFDOCS3): pdf3-%:
 	$(MAKE) -C $* latexpdf
 	mkdir -p $(DESTDIR3)
-	cp -ru $*/_build/latex/*.pdf $(DESTDIR3)
+	cp -r $*/_build/latex/*.pdf $(DESTDIR3)
 
 .PHONY: clean
 clean: $(CLEANDOCS)
